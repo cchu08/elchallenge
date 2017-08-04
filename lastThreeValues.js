@@ -1,17 +1,16 @@
-var initialResults = require('./initial_lab_results.json');
-var testResults = require('./test.json');
+const allResults = require('./initial_lab_results.json');
 
-const findLastThreeResults = function(results, inputID) {
+const findLastThreeResults = function(inputID) {
   let patientID, name;
 
-  results.filter((result) => {
+  allResults.filter((result) => {
     if (result.result_id === inputID) {
       patientID = result.patient_id;
       name = result.name;
     }
   })
 
-  var resultsOrderedByDate = results.filter((result) => {
+  var resultsOrderedByDate = allResults.filter((result) => {
     return patientID === result.patient_id && name === result.name;
   }).sort((a,b) => {
     return new Date(a.date) - new Date(b.date);
@@ -29,4 +28,4 @@ const findLastThreeResults = function(results, inputID) {
   return lastThreeResults;
 }
 
-console.log(findLastThreeResults(initialResults, 126));
+console.log(findLastThreeResults(126));
