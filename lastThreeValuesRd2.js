@@ -2,4 +2,8 @@ const allResults = require('./allLabResults.json');
 
 const lastThreeValues = require('./lastThreeValues.js')
 
-console.log(lastThreeValues.findLastThreeResults(allResults));
+const readLineSync = require('readline-sync');
+
+var inputID = readLineSync.question('Please enter a result ID:');
+
+console.log(lastThreeValues.findLastThreeResults(inputID, allResults));
