@@ -15,7 +15,6 @@ const findLastThreeResults = (inputID, results) => {
       }).sort((a,b) => {
         return new Date(a.date) - new Date(b.date);
       })
-
       // return the three most recent results along with result ID
       var lastThreeResults = {
         "last_three_values": [
