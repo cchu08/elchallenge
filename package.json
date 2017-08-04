@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/cchu08/elchallenge#readme",
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-merge-json": "^1.1.0",
     "readline-sync": "^1.4.7",
     "require": "^2.4.20"
   }
